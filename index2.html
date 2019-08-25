@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RIV Labo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="iframe.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>RIV Labo</h1>
+  <p>Plan je treinreis in België met plezier</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Zoek mijn trip</h3>
+      <form target="_blank" onsubmit="setSearchTermSN()">
+            Trip Id: <input id="sn" type="text" value="" />
+            <input type="button" value="Zoek traject" onclick="setSearchTermSN()" />
+        </form>
+        <p></p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Officiele stipheid</h3>
+      <iframe width = 1000 height = 500 src="https://opendata.infrabel.be/explore/dataset/stiptheid-per-type-trein-en-per-moment/analyze/?disjunctive.rel&disjunctive.regperiode&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJsaW5lIiwiZnVuYyI6IkFWRyIsInlBeGlzIjoicmVnZWxtYWF0Iiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoicmFuZ2UtY3VzdG9tIn1dLCJ4QXhpcyI6Im1hYW5kIiwibWF4cG9pbnRzIjpudWxsLCJzb3J0IjoiIiwidGltZXNjYWxlIjoibW9udGgiLCJzZXJpZXNCcmVha2Rvd24iOiJyZWwiLCJjb25maWciOnsiZGF0YXNldCI6InN0aXB0aGVpZC1wZXItdHlwZS10cmVpbi1lbi1wZXItbW9tZW50Iiwib3B0aW9ucyI6eyJkaXNqdW5jdGl2ZS5yZWwiOnRydWUsImRpc2p1bmN0aXZlLnJlZ3BlcmlvZGUiOnRydWV9fX1dLCJ0aW1lc2NhbGUiOiIiLCJkaXNwbGF5TGVnZW5kIjp0cnVlLCJhbGlnbk1vbnRoIjp0cnVlfQ%3D%3D">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+<script>
+        function setSearchTermSN(n){
+          var SN_VALUE = encodeURIComponent(document.getElementById("sn").value);
+          var newwindow = window.open("https://trainmapjs.azureedge.net/data/trips/" + SN_VALUE, 'name');
+          return false;
+        }
+      </script>
+</body>
+</html>
